@@ -11,8 +11,8 @@
 		<class>net.sxig.samples.model.FooEntity</class> 
 		<class>net.sxig.samples.model.MooEntity</class> 
 				<properties>
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.cache.use_query_cache" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.cache.provider_class"
@@ -24,6 +24,7 @@
 				value="true" />
 			<property name="hibernate.dialect" 
 			value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.id.new_generator_mappings" value="true" />
 			
 		</properties>
 	</persistence-unit>
