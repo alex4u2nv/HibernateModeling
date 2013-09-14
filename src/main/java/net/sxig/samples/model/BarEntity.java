@@ -33,13 +33,15 @@ import org.apache.log4j.Logger;
 @IdClass(BarEntityPk.class)
 public class BarEntity {
 	static Logger log = Logger.getLogger(BarEntity.class);
-	@Id //dummy @Id required
+	//dummy @Id required
 	protected String barString;
 	
 	
 	//Id re-definition as required by the @idClass annotation above.
 	//ID specificiations will be found in the embeddable class BarEntityPk
+	@Id
 	Long id;
+	@Id
 	String secIdString;
 	
 
