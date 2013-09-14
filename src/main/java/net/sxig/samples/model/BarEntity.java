@@ -33,7 +33,7 @@ import org.apache.log4j.Logger;
 @IdClass(BarEntityPk.class)
 public class BarEntity {
 	static Logger log = Logger.getLogger(BarEntity.class);
-	//ID annotations in this class is ignored, due to @idClass
+	@Id //dummy @Id required
 	protected String barString;
 	
 	
