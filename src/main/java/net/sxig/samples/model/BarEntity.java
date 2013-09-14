@@ -34,8 +34,8 @@ import org.apache.log4j.Logger;
 public class BarEntity {
 	static Logger log = Logger.getLogger(BarEntity.class);
 	@Id
-	
 	protected String barString;
+	
 	
 	//Id re-definition as required by the @idClass annotation above.
 	//ID specificiations will be found in the embeddable class BarEntityPk
@@ -98,6 +98,15 @@ public class BarEntity {
 	public BarEntity() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return String.format("BarEntity [barString=%s, id=%s, secIdString=%s]",
+				barString, id, secIdString);
 	}
 	
 }

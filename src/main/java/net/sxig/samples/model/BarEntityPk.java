@@ -29,9 +29,9 @@ public class BarEntityPk implements Serializable{
 	static Logger log = Logger.getLogger(BarEntityPk.class);
 	//Because Hibernate doesn't support composite strategies, this must be configured in DB
 	
-	@Id @GeneratedValue(strategy = GenerationType.TABLE, generator="fooIdenity")
-	@TableGenerator(name="fooIdenity", table="BarEntityIds",
-	pkColumnName="tablename", // TableID.TableName (value = table_name, test_table, etc.)
+	@Id @GeneratedValue(strategy = GenerationType.TABLE, generator="identityTable")
+	@TableGenerator(name="identityTable", table="identitytable",
+	pkColumnName="entity_table", // TableID.TableName (value = table_name, test_table, etc.)
 	valueColumnName="id", // TableID.ID (value = 1,2,3,etc.)
 	allocationSize=1 // flush every 1 insert
 )	
@@ -39,6 +39,7 @@ public class BarEntityPk implements Serializable{
 	
 	String secIdString;
 
+	
 	/**
 	 * @return the id
 	 */

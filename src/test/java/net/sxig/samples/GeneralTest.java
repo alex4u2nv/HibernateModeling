@@ -54,10 +54,11 @@ public class GeneralTest {
 		List<BarEntity> barList = barApplicationService.generateData();
 		log.debug("datasize => " + barList.size());
 		barList = barEntityJpa.save(barList);
+		barEntityJpa.flush();
 		for (BarEntity barEntity : barList) {
 			Assert.assertNotNull(barEntity);
 			Assert.assertNotNull(barEntity.getId());
-			log.debug(barEntity);
+			log.info(barEntity);
 			
 		}
 

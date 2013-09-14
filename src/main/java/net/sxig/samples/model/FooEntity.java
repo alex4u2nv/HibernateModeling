@@ -27,12 +27,12 @@ public class FooEntity implements Serializable{
 	private static final long serialVersionUID = -4363984099607196158L;
 	static Logger log = Logger.getLogger(FooEntity.class);
 	private String idString;
-	@Id @GeneratedValue(strategy = GenerationType.TABLE, generator="fooIdenity")
-	@TableGenerator(name="fooIdenity", table="TableID",
-	pkColumnName="tablename", // TableID.TableName (value = table_name, test_table, etc.)
+	@Id @GeneratedValue(strategy = GenerationType.TABLE, generator="identityTable")
+	@TableGenerator(name="identityTable", table="identitytable",
+	pkColumnName="entity_table", // TableID.TableName (value = table_name, test_table, etc.)
 	valueColumnName="id", // TableID.ID (value = 1,2,3,etc.)
 	allocationSize=1 // flush every 1 insert
-)
+)	
 	private Long idLong;
 
 	private String fooString;
