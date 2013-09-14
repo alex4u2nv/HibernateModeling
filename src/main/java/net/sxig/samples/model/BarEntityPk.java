@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Embeddable;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -16,7 +18,8 @@ public class BarEntityPk implements Serializable{
 	 */
 	private static final long serialVersionUID = 9147359290466087925L;
 	static Logger log = Logger.getLogger(BarEntityPk.class);
-	@GeneratedValue
+	//Because Hibernate doesn't support composite strategies, this must be configured in DB
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
 	
 	String secIdString;

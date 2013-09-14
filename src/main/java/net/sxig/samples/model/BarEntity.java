@@ -2,6 +2,8 @@ package net.sxig.samples.model;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.apache.log4j.Logger;
@@ -16,6 +18,8 @@ import org.apache.log4j.Logger;
 public class BarEntity {
 	static Logger log = Logger.getLogger(BarEntity.class);
 	@Id
+	//Because Hibernate doesn't support composite strategies, this must be configured in DB
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Embedded
 	protected BarEntityPk bepkIdBarEntityPk;
 	
