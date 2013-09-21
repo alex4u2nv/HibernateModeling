@@ -43,9 +43,11 @@ public class GeneralTest {
 	public void nothing() {
 
 	}
+
 	/**
-	 * Pass a list of objects to be saved, and verify that their auto generated IDs are 
-	 * being generated.
+	 * Pass a list of objects to be saved, and verify that their auto generated
+	 * IDs are being generated.
+	 * 
 	 * @throws Exception
 	 */
 	@Test
@@ -59,14 +61,15 @@ public class GeneralTest {
 			Assert.assertNotNull(barEntity);
 			Assert.assertNotNull(barEntity.getId());
 			log.info(barEntity);
-			
+
 		}
 
 	}
 
 	/**
-	 * Pass a list of objects to be saved, and verify that their auto generated IDs are 
-	 * being generated.
+	 * Pass a list of objects to be saved, and verify that their auto generated
+	 * IDs are being generated.
+	 * 
 	 * @throws Exception
 	 */
 	@Test
@@ -75,14 +78,14 @@ public class GeneralTest {
 		List<FooEntity> fooList = fooApplicationService.generateData();
 		log.debug("datasize => " + fooList.size());
 		Assert.assertNotNull(fooList);
-		Assert.assertTrue(fooList.size()>0);
+		Assert.assertTrue(fooList.size() > 0);
 		fooEntityRepository.save(fooList);
-		
-			for (FooEntity fooEntity : fooList) {
-				Assert.assertNotNull(fooEntity);
-				Assert.assertNotNull(fooEntity.getIdLong());
-				log.debug(fooEntity);
-			}
+
+		for (FooEntity fooEntity : fooList) {
+			Assert.assertNotNull(fooEntity);
+			Assert.assertNotNull(fooEntity.getIdLong());
+			log.debug(fooEntity);
+		}
 
 	}
 
