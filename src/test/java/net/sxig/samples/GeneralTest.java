@@ -1,12 +1,15 @@
 package net.sxig.samples;
 
-import java.util.Iterator;
+
 import java.util.List;
 
 import net.sxig.samples.model.BarEntity;
+import net.sxig.samples.model.BarEntityPk;
 import net.sxig.samples.model.FooEntity;
+import net.sxig.samples.model.MooEntity;
 import net.sxig.samples.repo.BarEntityJpa;
 import net.sxig.samples.repo.FooEntityRepository;
+import net.sxig.samples.repo.MooRepository;
 import net.sxig.samples.service.ApplicationService;
 
 import org.apache.log4j.Logger;
@@ -34,9 +37,13 @@ public class GeneralTest {
 	FooEntityRepository fooEntityRepository;
 
 	@Autowired
+	MooRepository mooRepository;
+	
+	@Autowired
 	ApplicationService<BarEntity> barApplicationService;
 	@Autowired
 	ApplicationService<FooEntity> fooApplicationService;
+	
 
 	// This test does nothing; it's used as a quick ramp up test to load DB.
 	@Test
@@ -87,6 +94,21 @@ public class GeneralTest {
 			log.debug(fooEntity);
 		}
 
+	}
+	
+	
+	@Test
+	public void testJpaJoin() {
+		log.debug("JPA TEST");
+		BarEntity bEntity = barEntityJpa.findOne(new BarEntityPk(1L, "ABC"));
+		Assert.assertNotNull(bEntity);
+		
+		log.debug("bEntity: " + bEntity);
+		
+		MooEntity mooFound = mooRepository.fetchByBarEntity(bEntity);
+		log.debug("mooFound: " + mooFound);
+		
+		
 	}
 
 }

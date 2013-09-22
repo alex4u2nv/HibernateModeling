@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.sxig.samples.model.BarEntity;
-import net.sxig.samples.model.BarEntityPk;
+
 import net.sxig.samples.service.ApplicationService;
 
 import org.apache.commons.lang.math.RandomUtils;

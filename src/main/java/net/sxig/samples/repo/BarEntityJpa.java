@@ -3,7 +3,7 @@ package net.sxig.samples.repo;
 import net.sxig.samples.model.BarEntity;
 import net.sxig.samples.model.BarEntityPk;
 
-import org.apache.log4j.Logger;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 /**
